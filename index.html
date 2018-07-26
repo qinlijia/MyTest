@@ -1,10 +1,621 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对比报告</title>
+    <link rel="stylesheet" href="css/frozen.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="mycss/compare.css">
 </head>
 <body>
-	<h2 style='color:red;'>���,��άϼ</h2>
+<!--1.个人体制报告-->
+<section class="item-container item-color1 item-step1">
+    <div class="compare-title-bar title-bar1">1.个人体制报告</div>
+    <div class="info-top">
+        <p class="avatar"><img src="images/nanhai.jpg" alt=""></p>
+        <ul>
+            <li><p>姓名：童童</p></li>
+            <li><p>年龄：五岁</p></li>
+            <li><p>性别：男 </p></li>
+            <li><p>上报据数据时间：2017年11月10日</p></li>
+        </ul>
+        <div class="data-show">
+            <ol>
+                <li>
+                    <h2>68</h2>
+                    <span>上次体测成绩</span>
+                </li>
+                <li>
+                    <h2>78</h2>
+                    <span>本次成绩</span>
+                </li>
+                <li>
+                    <h2>70</h2>
+                    <span>CPH  <i class="iconfont icon-wenhao"></i></span>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="info-bottom">
+        <table class="ui-table  ">
+            <thead>
+            <tr>
+                <th><span>项目</span></th>
+                <th><span>本次成绩</span></th>
+                <th><span>上次成绩</span></th>
+                <th><span>全省同龄 <br>女生平均值</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><span>身高</span></td>
+                <td>105.0cm<strong class="data-down">↓</strong></td>
+                <td>105.0cm</td>
+                <td>104.2cm</td>
+            </tr>
+            <tr>
+                <td><span>体重</span></td>
+                <td>16.8kg <strong class="data-balance">一</strong></td>
+                <td>16.8kg</td>
+                <td>16.9kg</td>
+            </tr>
+            <tr>
+                <td><span>立定跳远</span></td>
+                <td>53.0cm <strong class="data-down">↓</strong></td>
+                <td>73.8cm</td>
+                <td>73.8cm</td>
+            </tr>
+            <tr>
+                <td><span>网球掷远</span></td>
+                <td>5.7m  <strong class="data-up">↑</strong></td>
+                <td>4m</td>
+                <td>4m</td>
+            </tr>
+            <tr>
+                <td><span>走平衡木</span></td>
+                <td>25.7s <strong class="data-up">↑</strong></td>
+                <td>9.6s</td>
+                <td>9.6s</td>
+            </tr>
+            <tr>
+                <td><span>坐位体前屈</span></td>
+                <td>8.3cm <strong class="data-balance">一</strong></td>
+                <td>9.6cm</td>
+                <td>9.6cm</td>
+            </tr>
+            <tr>
+                <td><span>10米折返跑</span></td>
+                <td>9.4s <strong class="data-down">↓</strong></td>
+                <td>9s</td>
+                <td>9s</td>
+            </tr>
+            <tr>
+                <td><span>双脚连续起跳</span></td>
+                <td>12.5s <strong class="data-down">↓</strong></td>
+                <td>9.2s</td>
+                <td>9.2s</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="bottom_explain">该幼儿的测试结果得分依据国家体育总局幼儿体质测定标准、世界卫生委有关的推荐标准、世界卫生组织的有关标准以及有关研究成果计算得出的。</p>
+</section>
+<!--2.体质情况及评价-->
+<section class="item-container item-color2 item-step2">
+    <div class="compare-title-bar title-bar2">2.体质情况及评价</div>
+    <div class="slide-content ">
+        <!-- Swiper -->
+        <div class="swiper-container gallery-thumbs">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" ><img src="images/little_child1.png" alt=""></div>
+                <div class="swiper-slide" ><img src="images/little_child2.png" alt=""></div>
+                <div class="swiper-slide" ><img src="images/little_child3.png" alt=""></div>
+                <div class="swiper-slide" ><img src="images/little_child4.png" alt=""></div>
+                <div class="swiper-slide" ><img src="images/little_child5.png" alt=""></div>
+                <div class="swiper-slide" ><img src="images/little_child6.png" alt=""></div>
+                <div class="swiper-slide" ><img src="images/little_child7.png" alt=""></div>
+                <div class="swiper-slide" ><img src="images/little_child8.png" alt=""></div>
+
+            </div>
+        </div>
+        <div class="swiper-container gallery-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <h2 class="item-name">身高</h2>
+                    <div class="item-data">
+                        <div class="">
+                           <canvas id="drawing0"  width="75" height="75" data-number="80"> </canvas>
+                        </div>
+                        <div class="">
+                            <h2>80</h2>
+                            <p>本次成绩</p>
+                        </div>
+                    </div>
+                    <div class="item-ranking">
+                        <ul class="ranking-compare-bar">
+                            <li>
+                                <span>班级</span>
+                                <p><img src="images/animal1.png" alt=""></p>
+                                <font>26人 排名12</font>
+                            </li>
+                            <li>
+                                <span>全国</span>
+                                <p><img src="images/animal1.png" alt=""></p>
+                                <font>26人 排名12</font>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="item-remark">
+                        <h2>反应内容</h2>
+                        <p>反应幼儿骨骼纵向生长水平喝生长发育状况。</p>
+                        <h2>评价：</h2>
+                        <p>童童的身高非常棒。身高是反应儿童生长发育水平，体现先天和后天因素对幼儿的影响。如果您孩子身高偏离过大，预示发育迟缓或早熟，需要引起家长注意和警觉。
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="item-name">体重</h2>
+                    <div class="item-data">
+                        <div class="">
+                            <canvas id="drawing1"  width="75" height="75" data-number="90"> </canvas>
+                        </div>
+                        <div class="">
+                            <h2>90</h2>
+                            <p>本次成绩</p>
+                        </div>
+                    </div>
+                    <div class="item-ranking">
+                        <ul class="ranking-compare-bar">
+                            <li>
+                                <span>班级</span>
+                                <p><img src="images/animal1.png" alt=""></p>
+                                <font>26人 排名12</font>
+                            </li>
+                            <li>
+                                <span>全国</span>
+                                <p><img src="images/animal1.png" alt=""></p>
+                                <font>26人 排名12</font>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="item-remark">
+                        <h2>反应内容</h2>
+                        <p>反应幼儿骨骼纵向生长水平喝生长发育状况。</p>
+                        <h2>评价：</h2>
+                        <p>童童的身高非常棒。身高是反应儿童生长发育水平，体现先天和后天因素对幼儿的影响。如果您孩子身高偏离过大，预示发育迟缓或早熟，需要引起家长注意和警觉。
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="item-name">体重</h2>
+                    <div class="item-data">
+                        <div class="">
+                            <canvas id="drawing2"  width="75" height="75" data-number="90"> </canvas>
+                        </div>
+                        <div class="">
+                            <h2>90</h2>
+                            <p>本次成绩</p>
+                        </div>
+                    </div>
+                    <div class="item-ranking">
+                        <ul class="ranking-compare-bar">
+                            <li>
+                                <span>班级</span>
+                                <p><img src="images/animal1.png" alt=""></p>
+                                <font>26人 排名12</font>
+                            </li>
+                            <li>
+                                <span>全国</span>
+                                <p><img src="images/animal1.png" alt=""></p>
+                                <font>26人 排名12</font>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="item-remark">
+                        <h2>反应内容</h2>
+                        <p>反应幼儿骨骼纵向生长水平喝生长发育状况。</p>
+                        <h2>评价：</h2>
+                        <p>童童的身高非常棒。身高是反应儿童生长发育水平，体现先天和后天因素对幼儿的影响。如果您孩子身高偏离过大，预示发育迟缓或早熟，需要引起家长注意和警觉。
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="item-name">体重</h2>
+                    <div class="item-data">
+                        <div class="">
+                            <canvas id="drawing3"  width="75" height="75" data-number="90"> </canvas>
+                        </div>
+                        <div class="">
+                            <h2>90</h2>
+                            <p>本次成绩</p>
+                        </div>
+                    </div>
+                    <div class="item-ranking">
+                        <ul class="ranking-compare-bar">
+                            <li>
+                                <span>班级</span>
+                                <p><img src="images/animal1.png" alt=""></p>
+                                <font>26人 排名12</font>
+                            </li>
+                            <li>
+                                <span>全国</span>
+                                <p><img src="images/animal1.png" alt=""></p>
+                                <font>26人 排名12</font>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="item-remark">
+                        <h2>反应内容</h2>
+                        <p>反应幼儿骨骼纵向生长水平喝生长发育状况。</p>
+                        <h2>评价：</h2>
+                        <p>童童的身高非常棒。身高是反应儿童生长发育水平，体现先天和后天因素对幼儿的影响。如果您孩子身高偏离过大，预示发育迟缓或早熟，需要引起家长注意和警觉。
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="item-name">体重</h2>
+                    <div class="item-data">
+                        <div class="">
+                            <canvas id="drawing4"  width="75" height="75" data-number="90"> </canvas>
+                        </div>
+                        <div class="">
+                            <h2>90</h2>
+                            <p>本次成绩</p>
+                        </div>
+                    </div>
+                    <div class="item-ranking">
+                        <ul class="ranking-compare-bar">
+                            <li>
+                                <span>班级</span>
+                                <p><img src="images/animal1.png" alt=""></p>
+                                <font>26人 排名12</font>
+                            </li>
+                            <li>
+                                <span>全国</span>
+                                <p><img src="images/animal1.png" alt=""></p>
+                                <font>26人 排名12</font>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="item-remark">
+                        <h2>反应内容</h2>
+                        <p>反应幼儿骨骼纵向生长水平喝生长发育状况。</p>
+                        <h2>评价：</h2>
+                        <p>童童的身高非常棒。身高是反应儿童生长发育水平，体现先天和后天因素对幼儿的影响。如果您孩子身高偏离过大，预示发育迟缓或早熟，需要引起家长注意和警觉。
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="item-name">体重</h2>
+                    <div class="item-data">
+                        <div class="">
+                            <canvas id="drawing5"  width="75" height="75" data-number="90"> </canvas>
+                        </div>
+                        <div class="">
+                            <h2>90</h2>
+                            <p>本次成绩</p>
+                        </div>
+                    </div>
+                    <div class="item-ranking">
+                        <ul class="ranking-compare-bar">
+                            <li>
+                                <span>班级</span>
+                                <p><img src="images/animal1.png" alt=""></p>
+                                <font>26人 排名12</font>
+                            </li>
+                            <li>
+                                <span>全国</span>
+                                <p><img src="images/animal1.png" alt=""></p>
+                                <font>26人 排名12</font>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="item-remark">
+                        <h2>反应内容</h2>
+                        <p>反应幼儿骨骼纵向生长水平喝生长发育状况。</p>
+                        <h2>评价：</h2>
+                        <p>童童的身高非常棒。身高是反应儿童生长发育水平，体现先天和后天因素对幼儿的影响。如果您孩子身高偏离过大，预示发育迟缓或早熟，需要引起家长注意和警觉。
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="item-name">体重</h2>
+                    <div class="item-data">
+                        <div class="">
+                            <canvas id="drawing6"  width="75" height="75" data-number="90"> </canvas>
+                        </div>
+                        <div class="">
+                            <h2>90</h2>
+                            <p>本次成绩</p>
+                        </div>
+                    </div>
+                    <div class="item-ranking">
+                        <ul class="ranking-compare-bar">
+                            <li>
+                                <span>班级</span>
+                                <p><img src="images/animal1.png" alt=""></p>
+                                <font>26人 排名12</font>
+                            </li>
+                            <li>
+                                <span>全国</span>
+                                <p><img src="images/animal1.png" alt=""></p>
+                                <font>26人 排名12</font>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="item-remark">
+                        <h2>反应内容</h2>
+                        <p>反应幼儿骨骼纵向生长水平喝生长发育状况。</p>
+                        <h2>评价：</h2>
+                        <p>童童的身高非常棒。身高是反应儿童生长发育水平，体现先天和后天因素对幼儿的影响。如果您孩子身高偏离过大，预示发育迟缓或早熟，需要引起家长注意和警觉。
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="item-name">体重</h2>
+                    <div class="item-data">
+                        <div class="">
+                            <canvas id="drawing7"  width="75" height="75" data-number="90"> </canvas>
+                        </div>
+                        <div class="">
+                            <h2>90</h2>
+                            <p>本次成绩</p>
+                        </div>
+                    </div>
+                    <div class="item-ranking">
+                        <ul class="ranking-compare-bar">
+                            <li>
+                                <span>班级</span>
+                                <p><img src="images/animal1.png" alt=""></p>
+                                <font>26人 排名12</font>
+                            </li>
+                            <li>
+                                <span>全国</span>
+                                <p><img src="images/animal1.png" alt=""></p>
+                                <font>26人 排名12</font>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="item-remark">
+                        <h2>反应内容</h2>
+                        <p>反应幼儿骨骼纵向生长水平喝生长发育状况。</p>
+                        <h2>评价：</h2>
+                        <p>童童的身高非常棒。身高是反应儿童生长发育水平，体现先天和后天因素对幼儿的影响。如果您孩子身高偏离过大，预示发育迟缓或早熟，需要引起家长注意和警觉。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next "></div>
+        <div class="swiper-button-prev "></div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+<!--3.BMI值-->
+<section class="item-container item-color3 item-step3">
+    <div class="compare-title-bar title-bar3">3.BMI值</div>
+    <div class="item-state">
+        <article>
+            BMI指数（是Body Mass Index 的缩写形式）身体质量指数，简称“体质指数”又称“体重指数”，是国际衡量人体胖瘦程度以及是否健康的标准。与身高和体重有关系。
+        </article>
+        <p class="bmi-compute">
+            计算方法为：BMI=体重（kg）/身高（cm）²
+        </p>
+    </div>
+    <div class="bmi-data-container">
+       <div class="bmi-sign-bar">
+           <span>偏瘦</span>
+           <p class="bar-line" >
+               <font class="now_sign"><b>本次</b></font> <font class="old_sign"><b>上次</b></font>
+               <span class="bar-fdj" id="littleFdj"></span>
+           </p>
+           <span>偏胖</span>
+       </div>
+       <div class="bmi-view">
+           <div>
+               <div class="canvas-circle canvas-box1" >
+                   <span class="score">80</span>
+                   <canvas id="myCanvas1" width="137" height="137"></canvas>
+               </div>
+           </div>
+           <div class="bmi-fdj">
+               <div class="rule-content">
+                   <font class="now_sign">73</font> <font class="old_sign">83</font>
+                   <p class="fdj-img"><img src="images/fdj_bg.png" alt=""></p>
+               </div>
+           </div>
+       </div>
+        <!--不可删除-->
+        <div class="celiang">
+            <p class="p1"></p>
+            <p class="p2"></p>
+        </div>
+       <canvas id="bimShadow" ></canvas>
+   </div>
+    <div class="bottom-state">
+        <h2>评价：</h2>
+        <p>张恩泽的体重正常，身材合适。</p>
+        <p>与同龄人比，张恩泽的体重表现为非常棒。BMI表现为体重正常，身材合适，幼儿处于快速生长发育阶段，BMI是一个动态变化过程，继续注意饮食和运动的
+            合理保持。偏瘦、超重和肥胖会影响幼儿各项身体素质的发展，影响其性格发展，甚至还会影响智力的发育。</>
+    </div>
+</section>
+<!--4.遗传身高-->
+<section class="item-container item-color4 item-step4">
+    <div class="compare-title-bar title-bar4">4.遗传身高</div>
+    <ul class="father-mother-height">
+        <li><h2>父亲身高</h2>
+            <p class="progress-bar"><span>178cm</span></p></li>
+        <li><h2>母亲身高</h2>
+            <p class="progress-bar"><span>138cm</span></p></li>
+        <li>
+            <h2>孩子身高</h2>
+            <div class="child-height">
+                <div>
+                    <h3>本次遗传身高 <span>(3岁)</span></h3>
+                    <p><img src="images/yichuan_1.png" alt=""></p>
+                    <div><span>178cm</span> <span>168cm</span></div>
+                </div>
+                <div>
+                    <h3>本次遗传身高 <span>(4岁)</span></h3>
+                    <p><img src="images/yichuan_1.png" alt=""></p>
+                    <div><span>178cm</span> <span>168cm</span></div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <!--点评-->
+    <div class="remark-container">
+        <h2 class="remark-title">点评</h2>
+        <article>
+            <p class="text-light"> 与同龄人相比，童童的身高表现非常棒。</p>
+            <p> 身高受先天因素（遗传父母）的影响，童童当前年龄的遗传身高应为108cm，表现为环 境因素有利于身高增长。</p>
+            <p>孩子的身高还与后天因素有关，如营养、运动和睡眠等等。膳食中有充足的蛋白质、 钙、磷等营养物质，才能保证骨骼的生长，而骨骼的生长就体现在身高的增长。童童
+                有不吃的一类食物，说明童童挑食（偏食），营养结构不合理。挑食（偏食）会影响 正常生长发育和成年后的身体健康。建议食物采取多种做法，增加不喜欢类别的食 物。</p>
+            <p> 童童每天户外运动时间为60分钟以上，说明户外运动体育时间充足。建议继续保持， 适当增加运动强度。运动是促进幼儿生长的重要因素，<span class="text-light">能够促进血液循环，保证骨骼
+                获得营养，运动刺激骨骼的生长，跳跃、攀爬、跳绳、游泳等练习都能促进身高的增 长。</span></p>
+            <p>身高还受睡眠的影响。生长激素等促进骨骼的长长，而生长激素主要在晚上时间分 泌。孩子在春天容易长高。因此要保证幼儿每天的睡眠总时间在11~12个小时之间，包
+                括午睡。<span class="text-light">童童的睡眠时间为不足，需要增加睡眠时间。</span></p>
+        </article>
+    </div>
+</section>
+<!--5.综合评价-->
+<section class="item-container item-color5 item-step5">
+    <div class="compare-title-bar title-bar5">5.综合评价</div>
+    <div class="six_data">
+        <div id="six_item" style="width:90%; height: 3rem ;margin:auto;"></div>
+        <div class="six_animals">
+            <span>
+                <img src="images/animal6.png" alt="">
+                 <h2>灵敏素质 <br>（48分）</h2>
+            </span>
+            <span>
+                <img src="images/animal7.png" alt="">
+                <h2>协调能力 <br>（45分）</h2>
+            </span>
+            <span>
+                <img src="images/animal2.png" alt="">
+                <h2>下肢力量 <br>（50分）</h2>
+            </span>
+            <span>
+                <img src="images/animal4.png" alt="">
+                 <h2>平衡能力  <br>（33分）</h2>
+            </span>
+            <span>
+                <img src="images/animal5.png" alt="">
+                 <h2>柔韧性 <br>（51分）</h2>
+            </span>
+            <span>
+                <img src="images/animal3.png" alt="">
+                 <h2>上肢力量 <br>（100分）</h2>
+            </span>
+        </div>
+    </div>
+    <div class="strong-weak-container">
+        <div class="strong-weak-item">
+            <h2 class="item-sign">强</h2>
+            <p><span>双脚连续跳：</span>该项目代表了协调素质，童童可能在舞蹈、武术、游泳等运动项目中有好的表现，可以适当进行锻炼。</p>
+            <i class="iconfont icon-share-right"></i>
+        </div>
+        <div class="strong-weak-item weak-item">
+            <h2 class="item-sign">弱</h2>
+            <p><span>走平衡木：</span>该项目代表了平衡素质，日常生活中，童童可能在较高、较窄的地方平衡方面不够好，应加强该方面的锻炼。</p>
+            <i class="iconfont icon-share-right"></i>
+        </div>
+    </div>
+</section>
+<!--6.出生方式-->
+<section class="item-container item-color6 item-step6">
+    <div class="compare-title-bar title-bar6">6.出生方式</div>
+    <div class="remark-container">
+        <h2 class="remark-title">剖腹产</h2>
+        <article>
+            <p>
+                剖腹产孩子的注意事项：剖腹产的孩子很可能存在感觉统合能力低，动作协调性，灵敏性和平衡能力不好，反应能力不足，学习能力不够好，注意力不集中、好动、适应能力差等问题出现比例高于顺产儿童。容易出现触觉学习不良、前庭功能发展不够好，在语言和社交行为发育方面落后，神经发育异常率高于正常出生的孩子。</p>
+            <p>家长需要关注孩子这些方面的表现，多练习爬行、旋转运动（如旋转木马）、要换运动（如荡秋千）、可采用不同的体位仰卧、俯卧侧卧、翻滚等、跳跃运动（如蹦床）、等都对前庭功能和大脑功能的发展有何很好的促进作用。</p>
+        </article>
+    </div>
+</section>
+<!--7.应急反应能力-->
+<section class="item-container item-color7 item-step7">
+    <div class="compare-title-bar title-bar7">7.应急反应能力</div>
+    <ul class="reactive-img">
+        <li><img src="images/s_h_1.png" alt=""></li>
+        <li class="active"><img src="images/s_h_2.png" alt=""></li>
+        <li><img src="images/s_h_3.png" alt=""></li>
+    </ul>
+    <div class="reactive-sign-bar">
+        <span>偏差</span>
+        <p class="bar-line"><font>本次</font></p>
+        <span>最佳</span>
+    </div>
+    <p class="canvas-circle canvas-box2">
+        <span class="score">80</span>
+        <canvas id="myCanvas2" width="137" height="137"></canvas>
+    </p>
+    <div class="remark-container">
+        <h2 class="remark-title">点评</h2>
+        <article>
+            <p><span class="text-light">应急反应能力中等，应对危险能力一般。</span></p>
+            <p>应急反应能力是在没有预期的情况发生时，紧急调动身体，躲避危险和做出反应的 能力，是一项综合反应能力。力量和柔韧性是幼儿运动的基础，平衡能力、协调能
+                力和灵敏性体现稳定、反应、动作变化和身体移动能力，尤其灵敏素质完美体现各项 素质。童童应急反应能力中等，应对危险的能力一般。需要加强您的孩子日常的力量
+                锻炼和柔韧性练习，多进行走、跑、跳跃动作，经常做一些关节的拉伸练习，能够 多进行锻炼场地的变化练习，如高低不平，狭窄的地面的练习，多做一些动作转换的 练习，提高反应能力。</p>
+        </article>
+    </div>
+
+</section>
+<!--8.博士点评-->
+<section class="item-container item-color8 item-step8">
+    <div class="compare-title-bar title-bar8">8.博士点评</div>
+    <div class="this-score-container">
+        <h2 class="remark-title">本次得分</h2>
+        <article>
+            <div class="canvas-circle canvas-box3">
+                <span class="score">20</span>
+                <canvas id="myCanvas3" width="137" height="137"></canvas>
+            </div>
+            <p class="text-center">各项素质表现合格，但还是欠缺运动</p>
+        </article>
+    </div>
+    <div class="ranking-compare-container">
+        <h2 class="remark-title">排名对比</h2>
+        <ul class="ranking-compare-bar">
+            <li><span>班级</span>
+                <p><img src="images/animal8.png" alt=""></p><font>26人排名12</font></li>
+            <li><span>全国</span>
+                <p><img src="images/animal8.png" alt=""></p><font>26人排名12</font></li>
+            <li><span>市级</span>
+                <p><img src="images/animal8.png" alt=""></p><font>26人排名12</font></li>
+            <li><span>省级</span>
+                <p><img src="images/animal8.png" alt=""></p><font>26人排名12</font></li>
+        </ul>
+    </div>
+    <div class="remark-container">
+        <h2 class="remark-title">点评</h2>
+        <article>
+            <p>
+                反映张恩泽各项素质发展稍差，日常生活中躲避危险能力、学习能力较差，需要增加户外体育运动的时间和频率，通过各种游戏全面锻炼各项素质，增加神经系统支配肌肉的能力，促进大脑发育，提高智力和学习能力，提高躲避危险的能力。</p>
+            <p class="text-light">运动是营养，是良医，是健脑丸，是孩子的保护神，快让孩子动起来一起跟童童康康享受运动的益处和快乐吧！</p>
+        </article>
+    </div>
+</section>
 </body>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/circlegradient.js?v=1"></script>
+<script src="js/main.js"></script>
 </html>

@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en" style="font-size: 20px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>全民阅读 书香童康</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://www.sxxyyx.com/Public/css/swiper/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="http://www.sxxyyx.com/Public/css/home.css">
+    <script src="http://www.sxxyyx.com/Public/js/jquery.js"></script>
+    <script src="http://www.sxxyyx.com/Public/js/rem.min.js"></script>
+    <script src="http://www.sxxyyx.com/Public/js/jquery_validate_min.js"></script>
+    <script src="http://www.sxxyyx.com/Public/js/layer/layer.js"></script>
+    <link rel="stylesheet" href="http://www.sxxyyx.com/Public/js/layer/skin/default/layer.css?v=3.0.3303"
+          id="layuicss-skinlayercss">
+    <script src="http://www.sxxyyx.com/Public/css/swiper/swiper-3.4.2.min.js"></script>
+</head>
+<body>
+<style>
+    .goods_row .goods_infos dd.new {
+        width: 48%;
+        height: 100%;
+    }
+
+    .innerbox {
+        padding: 0 .3333rem .3333rem .3333rem;
+    }
+
+    .car em {
+        position: initial;
+    }
+
+    .pull-right {
+        margin-right: 0.2rem;
+    }
+
+    .menubar {
+        padding: 0.25rem 0;
+    }
+
+    .cart_num_up.radius {
+        border-radius: 50%;
+        height:1rem;
+        line-height: 1rem !important;
+        width: 1rem !important;
+        padding: 0 !important;
+    }
+
+    .hide {
+        display: none;
+    }
+
+</style>
+
+<style>
+    .select_bar {
+        font-size: 0.5833rem;
+        line-height: 1.0416rem;
+        background-color: #fff;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .select_bar > div {
+        padding: 5px 0 10px;
+
+    }
+
+    .select_bar > div .glyphicon {
+        color: #999;
+    }
+
+    .search_content .form-control-feedback {
+        right: auto;
+        left: 0;
+        height: 28px;
+        line-height: 28px;
+        width: 28px;
+    }
+
+    .has-feedback .form-control {
+        padding-right: 10px;
+        padding-left: 28px;
+        height: 28px;
+        line-height: 28px;
+        border-radius: 14px;
+    }
+
+    .search_btn .btn {
+        height: 28px;
+        line-height: 28px;
+        border-radius: 14px;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-left: 5px;
+    }
+
+    .select_class {
+        line-height: 28px;
+    }
+
+    .select_class span {
+        padding: 0 3px;
+        max-width: 60px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .select_window {
+        background: #fff;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        z-index: 3000;
+    }
+
+    .select_window .select_window_modal {
+        background: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 100%;
+    }
+
+    .ful_bar {
+        width: 100%;
+    }
+
+    .item-container li {
+        flex-flow: row;
+        padding-left: 15px;
+        margin-left: 0;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        color: #464646;
+        box-sizing: border-box;
+        font-size: 12px;
+        position: relative;
+    }
+
+    .item-container li.select {
+        color: #00b8fc;
+    }
+
+    .item-container li.select:after {
+        content: '';
+        position: absolute;
+        width: 14px;
+        height: 9px;
+        background: url("images/icon_select_duigou.png") no-repeat center center;
+        background-size: cover;
+        right: .15rem;
+        top: 50%;
+        margin-top: -0.045rem;
+    }
+
+    .left_item_bar {
+        width: 38.66%;
+        overflow-y: scroll;
+        background: #f0f5f6;
+    }
+
+    .left_item_bar li {
+        padding-left: 15px;
+        background: #f0f5f6;
+        box-sizing: border-box;
+        margin-left: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .left_item_bar li h4 {
+        font-size: 14px;
+    }
+
+    .left_item_bar li:after {
+        color: #949696;
+        font-size: 28px;
+    }
+
+    .left_item_bar li.active {
+        color: #00b8fc;
+        background: #fff;
+    }
+
+    .left_item_bar li.active:after {
+        color: #00b8fc;
+    }
+
+    .right_item_bar {
+        width: 61.34%;
+        overflow-y: scroll;
+    }
+
+    .right_item_bar > div {
+        display: none;
+    }
+
+    .select_window li h4 {
+        font-size: 13px;
+        margin: 0;
+    }
+
+    .item_window > div {
+        display: flex;
+        min-height: 150px;
+        max-height: 200px;
+        flex-flow: row;
+        background: #fff;
+        position: relative;
+    }
+
+    .item_window > div:after {
+        content: '';
+        height: 30px;
+        width: 100%;
+        position: absolute;
+        bottom: -30px;
+        border-top: 1px solid #e6e6e6;
+        background-image: url("images/icon_2line.png");
+        background-repeat: no-repeat;
+        background-size: 18px auto;
+        background-position: center center;
+        background-color: #fff;
+    }
+
+    .ovfHiden {
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .header_list_nav {
+        text-align: center;
+        background: #fff;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .header_list_nav > div {
+        padding: 10px 0;
+    }
+
+    .header_list_nav .glyphicon {
+        font-size: 12px;
+        color: #666;
+    }
+
+</style>
+<div class="container innerbox">
+    <div class="slide swiper-container swiper-container-horizontal swiper-container-fade">
+        <div class="swiper-wrapper" style="transition-duration: 0ms;">
+            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="9"
+                 style="width: 306px; transform: translate3d(0px, 0px, 0px); opacity: 1; transition-duration: 0ms;"><img
+                    src="http://www.sxxyyx.com/Uploads/20170909/59b2e1253eb53.png" alt=""></div>
+            <div class="swiper-slide" data-swiper-slide-index="0"
+                 style="width: 306px; transform: translate3d(-306px, 0px, 0px); opacity: 1; transition-duration: 0ms;">
+                <img src="http://www.sxxyyx.com/Uploads/20170909/59b2e0b95b143.jpg" alt=""></div>
+            <div class="swiper-slide" data-swiper-slide-index="1"
+                 style="width: 306px; transform: translate3d(-612px, 0px, 0px); opacity: 1; transition-duration: 0ms;">
+                <img src="http://www.sxxyyx.com/Uploads/20170909/59b2e0d1f1a17.png" alt=""></div>
+            <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="2"
+                 style="width: 306px; transform: translate3d(-918px, 0px, 0px); opacity: 1; transition-duration: 0ms;">
+                <img src="http://www.sxxyyx.com/Uploads/20170909/59b2e0dda384f.png" alt=""></div>
+            <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="3"
+                 style="width: 306px; transform: translate3d(-1224px, 0px, 0px); opacity: 1; transition-duration: 0ms;">
+                <img src="http://www.sxxyyx.com/Uploads/20170909/59b2e0e78d2f3.png" alt=""></div>
+            <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="4"
+                 style="width: 306px; transform: translate3d(-1530px, 0px, 0px); opacity: 0; transition-duration: 0ms;">
+                <img src="http://www.sxxyyx.com/Uploads/20170909/59b2e0f20425a.png" alt=""></div>
+            <div class="swiper-slide" data-swiper-slide-index="5"
+                 style="width: 306px; transform: translate3d(-1836px, 0px, 0px); opacity: 0; transition-duration: 0ms;">
+                <img src="http://www.sxxyyx.com/Uploads/20170909/59b2e0ff1dd42.png" alt=""></div>
+            <div class="swiper-slide" data-swiper-slide-index="6"
+                 style="width: 306px; transform: translate3d(-2142px, 0px, 0px); opacity: 0; transition-duration: 0ms;">
+                <img src="http://www.sxxyyx.com/Uploads/20170909/59b2e106785ab.png" alt=""></div>
+            <div class="swiper-slide" data-swiper-slide-index="7"
+                 style="width: 306px; transform: translate3d(-2448px, 0px, 0px); opacity: 0; transition-duration: 0ms;">
+                <img src="http://www.sxxyyx.com/Uploads/20170909/59b2e112d77a2.png" alt=""></div>
+            <div class="swiper-slide" data-swiper-slide-index="8"
+                 style="width: 306px; transform: translate3d(-2754px, 0px, 0px); opacity: 0; transition-duration: 0ms;">
+                <img src="http://www.sxxyyx.com/Uploads/20170909/59b2e11b0931c.png" alt=""></div>
+            <div class="swiper-slide" data-swiper-slide-index="9"
+                 style="width: 306px; transform: translate3d(-3060px, 0px, 0px); opacity: 0; transition-duration: 0ms;">
+                <img src="http://www.sxxyyx.com/Uploads/20170909/59b2e1253eb53.png" alt=""></div>
+            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0"
+                 style="width: 306px; transform: translate3d(-3366px, 0px, 0px); opacity: 0; transition-duration: 0ms;">
+                <img src="http://www.sxxyyx.com/Uploads/20170909/59b2e0b95b143.jpg" alt=""></div>
+        </div>
+        <div class="swiper-pagination swiper-pagination-bullets"><span class="swiper-pagination-bullet"></span><span
+                class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
+                class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span
+                class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
+                class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
+                class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div>
+    </div>
+
+
+    <div class="row menubar">
+        <div class="col-xs-12">
+            <div class="user_count pull-left">
+                <span class="pull-left">浏览：40712人</span>
+                <span class="pull-right">推荐精品书3套</span>
+            </div>
+            <div class="car_user pull-right">
+                <a href="javascript:void(0);" class="car"><i class="icon icon-shopping-cart"></i><span
+                        style="font-size: 0.5416rem;color: red;">（<em>1</em>）</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="select_window" style="display: none">
+        <div class="select_window_modal">
+            <div class="header_list_nav row">
+                <div class="col-xs-6 nav_item  active"><span>学校</span></div>
+                <div class="col-xs-6 nav_item"><span>班级</span></div>
+            </div>
+            <div class="item_window">
+                <div class="window1  ui-border-b" style="display: flex;">
+                    <div class="left_item_bar">
+                        <ul class="item-container">
+                            <li class=" active">
+                                <div class="ui-list-info">
+                                    <h4>幼儿园</h4>
+                                </div>
+                            </li>
+                            <li class="ui-border-b">
+                                <div class="ui-list-info">
+                                    <h4>小学</h4>
+                                </div>
+                            </li>
+                            <li class="ui-border-b">
+                                <div class="ui-list-info">
+                                    <h4>初中</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right_item_bar">
+                        <div style="display: block;">
+                            <ul class="ui-list ui-list-single  v_item_container item-container">
+                                <li class="">
+                                    <div class="ui-list-info">
+                                        <h4 class="ui-nowrap">一班</h4>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="ui-list-info">
+                                        <h4 class="ui-nowrap">二班</h4>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="ui-list-info">
+                                        <h4 class="ui-nowrap">三班</h4>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="ui-list-info">
+                                        <h4 class="ui-nowrap">四班</h4>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                        <div style="display: none;">2</div>
+                        <div style="display: none;">3</div>
+                        <div style="display: none;">4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row select_bar">
+        <div class="col-xs-4 select_class">
+            <span><i class="glyphicon glyphicon-th-large"></i> <span id="class_name">选择分类</span><i
+                    class="glyphicon glyphicon glyphicon-menu-right"></i></span>
+        </div>
+        <div class="col-xs-6 search_content">
+            <div class=" form-inline has-feedback">
+                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                <input type="text" class="form-control" placeholder="搜索书名关键字">
+
+            </div>
+        </div>
+        <div class="col-xs-2  search_btn">
+            <button class="btn btn-default">搜索</button>
+        </div>
+    </div>
+    <style>
+        .goods_row {
+            width: 100%;
+            margin-bottom: 0.233rem;
+            height: 4.6rem;
+            overflow: hidden;
+            border: 0.01rem solid #dfdfdf;
+            padding: .1rem;
+        }
+        .goods_row .goods_thumb {
+            position: relative;
+            float: left;
+            width: 5.5rem;
+            box-sizing: border-box;
+        }
+        .goods_row .goods_thumb img {
+            max-width: 100%;
+             min-height:2rem;
+        }
+        .goods_row .goods_infos h3 {
+            font-size: 0.4166rem;
+            height: 1rem;
+            line-height: 1rem;
+        }
+        .goods_row .goods_infos dd{
+            line-height: 1rem;
+            height:1rem;
+        }
+        .goods_row .goods_infos dl{
+            margin-bottom: 0rem;
+        }
+        .goods_row .goods_infos .inner {
+            margin-left:5.666rem;
+            box-sizing: border-box;
+            overflow: hidden;
+            padding-left: 0.208333rem;
+        }
+    </style>
+    <form action="/index.php?m=home&amp;c=cart&amp;a=index" method="post">
+        <input type="hidden" name="cid" value="223">
+        <div class="goods_container">
+            <div class="goods_row">
+                <div class="goods_thumb">
+                    <a href="/index.php?m=home&amp;c=goods&amp;a=index&amp;id=473&amp;cid=223"><img
+                            src="http://www.sxxyyx.com/Uploads/20180616/5b24aa80e0e15.jpg" alt="《话说文明》"
+                            id="thumb473"></a>
+                </div>
+                <div class="goods_infos">
+                    <div class="inner">
+                        <h3><a href="/index.php?m=home&amp;c=goods&amp;a=index&amp;id=473&amp;cid=223">《话说文明》</a></h3>
+                        <dl>
+                            <dd>选读初三下</dd>
+                            <dd class="ml8"></dd>
+                            <dd class="text-muted">原价:20</dd>
+                            <dd class="red">现价:17</dd>
+                            <dd class="new">
+                                <a href="javascript:void(0);" onclick="addCart(473, 0,this);"
+                                   class="label label-default cart_num_down"
+                                   style="width: 30%;border: .1em solid gainsboro;background: #FFFFFF;color: red;display:table-cell; vertical-align:middle;margin-bottom: 0.1em"><i
+                                        class="icon icon-minus" style="vertical-align:middle;"></i></a>
+                                <div class="cart_num_b" style="width: 35%"><input readonly="" type="number"
+                                                                                  onchange="cartCount()"
+                                                                                  class="cart_num"
+                                                                                  name="id[473]" id="num473" value="1"
+                                                                                  style="height: 100%;text-align: center">
+                                </div>
+                                <a href="javascript:void(0);" onclick="addCart(473, 1,this);"
+                                   class="label label-default cart_num_up"
+                                   style="width: 30%;border: .1em solid gainsboro;background: #FFFFFF;color: red;display:table-cell; vertical-align:middle;margin-bottom: 0.1em"><i
+                                        class="icon icon-plus" style="vertical-align:middle"></i></a>
+                            </dd>
+
+                            <dd class="cart_chage" >
+                                <a href="javascript:void(0)" onclick="goBuy(this)"
+                                   data-href="/index.php?m=home&amp;c=cart&amp;a=index&amp;id=473&amp;cid=223"
+                                   class="label label-danger car_pay" style="padding:.6em .6em .6em .6em;">立即购买</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="goods_row">
+                <div class="goods_thumb">
+                    <a href="/index.php?m=home&amp;c=goods&amp;a=index&amp;id=476&amp;cid=223"><img
+                            src="http://www.sxxyyx.com/Uploads/20180616/5b24abbdb60cb.jpg" alt="《心灵甘泉——四种爱》"
+                            id="thumb476"></a>
+                </div>
+                <div class="goods_infos">
+                    <div class="inner">
+                        <h3><a href="/index.php?m=home&amp;c=goods&amp;a=index&amp;id=476&amp;cid=223">《心灵甘泉——四种爱》</a>
+                        </h3>
+                        <dl>
+                            <dd>选读初三下</dd>
+                            <dd class="ml8"></dd>
+                            <dd class="text-muted">原价:18</dd>
+                            <dd class="red">现价:15</dd>
+                            <dd class="new">
+                                <a href="javascript:void(0);" onclick="addCart(476, 0,this);"
+                                   class="label label-default cart_num_down hide"
+                                   style="width: 30%;border: .1em solid gainsboro;background: #FFFFFF;color: red;display:table-cell; vertical-align:middle;margin-bottom: 0.1em"><i
+                                        class="icon icon-minus" style="vertical-align:middle;"></i></a>
+                                <div class="cart_num_b hide" style="width: 35%"><input readonly="" type="number"
+                                                                                       onchange="cartCount()"
+                                                                                       class="cart_num" name="id[476]"
+                                                                                       id="num476" value="0"
+                                                                                       style="height: 100%;text-align: center">
+                                </div>
+                                <a href="javascript:void(0);" onclick="addCart(476, 1,this);"
+                                   class="label label-default cart_num_up radius"
+                                   style="width: 30%;border: .1em solid gainsboro;background: #FFFFFF;color: red;display:table-cell; vertical-align:middle;margin-bottom: 0.1em"><i
+                                        class="icon icon-plus" style="vertical-align:middle"></i></a>
+                            </dd>
+                            <!--<dd class="now_buy">-->
+                            <!--<a href="javascript:void(0);" onclick="addCart(476, 0);" class="label label-default cart_num_down" style="width: 30%;border: .1em solid gainsboro;background: #FFFFFF;color: red;display:table-cell; vertical-align:middle;margin-bottom: 0.1em"><i class="icon icon-minus" style="vertical-align:middle;"></i></a>-->
+                            <!--<div class="cart_num_b"  style="width: 35%"><input readonly type="number" onchange="cartCount()" class="cart_num" name="id[476]" id="num476" value="0" style="height: 100%;text-align: center"></div>-->
+                            <!--<a href="javascript:void(0);" onclick="addCart(476, 1);" class="label label-default cart_num_up" style="width: 30%;border: .1em solid gainsboro;background: #FFFFFF;color: red;display:table-cell; vertical-align:middle;margin-bottom: 0.1em"><i class="icon icon-plus" style="vertical-align:middle"></i></a>-->
+                            <!--</dd>-->
+                            <dd class="cart_chage" >
+                                <a href="javascript:void(0)" onclick="goBuy(this)"
+                                   data-href="/index.php?m=home&amp;c=cart&amp;a=index&amp;id=476&amp;cid=223"
+                                   class="label label-danger car_pay" style="padding:.6em .6em .6em .6em;">立即购买</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="goods_row">
+                <div class="goods_thumb">
+                    <a href="/index.php?m=home&amp;c=goods&amp;a=index&amp;id=472&amp;cid=223"><img
+                            src="http://www.sxxyyx.com/Uploads/20180706/5b3f850743be0.jpg"
+                            alt="《酷玩百科趣味科学系列---创造你自己的机器人》"
+                            id="thumb472"></a>
+                </div>
+                <div class="goods_infos">
+                    <div class="inner">
+                        <h3><a href="/index.php?m=home&amp;c=goods&amp;a=index&amp;id=472&amp;cid=223">《酷玩百科趣味科学系列---创造你自己的机器人》</a>
+                        </h3>
+                        <dl>
+                            <dd>选读初三下</dd>
+                            <dd class="ml8"></dd>
+                            <dd class="text-muted">原价:35</dd>
+                            <dd class="red">现价:29</dd>
+                            <dd class="new">
+                                <a href="javascript:void(0);" onclick="addCart(472, 0,this);"
+                                   class="label label-default cart_num_down hide"
+                                   style="width: 30%;border: .1em solid gainsboro;background: #FFFFFF;color: red;display:table-cell; vertical-align:middle;margin-bottom: 0.1em"><i
+                                        class="icon icon-minus" style="vertical-align:middle;"></i></a>
+                                <div class="cart_num_b hide" style="width: 35%"><input readonly="" type="number"
+                                                                                       onchange="cartCount()"
+                                                                                       class="cart_num" name="id[472]"
+                                                                                       id="num472" value="0"
+                                                                                       style="height: 100%;text-align: center">
+                                </div>
+                                <a href="javascript:void(0);" onclick="addCart(472, 1,this);"
+                                   class="label label-default cart_num_up radius"
+                                   style="width: 30%;border: .1em solid gainsboro;background: #FFFFFF;color: red;display:table-cell; vertical-align:middle;margin-bottom: 0.1em"><i
+                                        class="icon icon-plus" style="vertical-align:middle"></i></a>
+                            </dd>
+                            <!--<dd class="now_buy">-->
+                            <!--<a href="javascript:void(0);" onclick="addCart(472, 0);" class="label label-default cart_num_down" style="width: 30%;border: .1em solid gainsboro;background: #FFFFFF;color: red;display:table-cell; vertical-align:middle;margin-bottom: 0.1em"><i class="icon icon-minus" style="vertical-align:middle;"></i></a>-->
+                            <!--<div class="cart_num_b"  style="width: 35%"><input readonly type="number" onchange="cartCount()" class="cart_num" name="id[472]" id="num472" value="0" style="height: 100%;text-align: center"></div>-->
+                            <!--<a href="javascript:void(0);" onclick="addCart(472, 1);" class="label label-default cart_num_up" style="width: 30%;border: .1em solid gainsboro;background: #FFFFFF;color: red;display:table-cell; vertical-align:middle;margin-bottom: 0.1em"><i class="icon icon-plus" style="vertical-align:middle"></i></a>-->
+                            <!--</dd>-->
+                            <dd class="cart_chage" >
+                                <a href="javascript:void(0)" onclick="goBuy(this)"
+                                   data-href="/index.php?m=home&amp;c=cart&amp;a=index&amp;id=472&amp;cid=223"
+                                   class="label label-danger car_pay" style="padding:.6em .6em .6em .6em;">立即购买</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="goods_row">
+                <div class="goods_thumb">
+                    <a href="/index.php?m=home&amp;c=goods&amp;a=index&amp;id=472&amp;cid=223"><img
+                            src="http://www.sxxyyx.com/Uploads/20180706/5b3f850743be0.jpg"
+                            alt="《酷玩百科趣味科学系列---创造你自己的机器人》"
+                            id="thumb472"></a>
+                </div>
+                <div class="goods_infos">
+                    <div class="inner">
+                        <h3><a href="/index.php?m=home&amp;c=goods&amp;a=index&amp;id=472&amp;cid=223">《酷玩百科趣味科学系列---创造你自己的机器人》</a>
+                        </h3>
+                        <dl>
+                            <dd>选读初三下</dd>
+                            <dd class="ml8"></dd>
+                            <dd class="text-muted">原价:35</dd>
+                            <dd class="red">现价:29</dd>
+                            <dd class="new">
+                                <a href="javascript:void(0);" onclick="addCart(472, 0,this);"
+                                   class="label label-default cart_num_down hide"
+                                   style="width: 30%;border: .1em solid gainsboro;background: #FFFFFF;color: red;display:table-cell; vertical-align:middle;margin-bottom: 0.1em"><i
+                                        class="icon icon-minus" style="vertical-align:middle;"></i></a>
+                                <div class="cart_num_b hide" style="width: 35%"><input readonly="" type="number"
+                                                                                       onchange="cartCount()"
+                                                                                       class="cart_num" name="id[472]"
+                                                                                       id="num472" value="0"
+                                                                                       style="height: 100%;text-align: center">
+                                </div>
+                                <a href="javascript:void(0);" onclick="addCart(472, 1,this);"
+                                   class="label label-default cart_num_up radius"
+                                   style="width: 30%;border: .1em solid gainsboro;background: #FFFFFF;color: red;display:table-cell; vertical-align:middle;margin-bottom: 0.1em"><i
+                                        class="icon icon-plus" style="vertical-align:middle"></i></a>
+                            </dd>
+                            <!--<dd class="now_buy">-->
+                            <!--<a href="javascript:void(0);" onclick="addCart(472, 0);" class="label label-default cart_num_down" style="width: 30%;border: .1em solid gainsboro;background: #FFFFFF;color: red;display:table-cell; vertical-align:middle;margin-bottom: 0.1em"><i class="icon icon-minus" style="vertical-align:middle;"></i></a>-->
+                            <!--<div class="cart_num_b"  style="width: 35%"><input readonly type="number" onchange="cartCount()" class="cart_num" name="id[472]" id="num472" value="0" style="height: 100%;text-align: center"></div>-->
+                            <!--<a href="javascript:void(0);" onclick="addCart(472, 1);" class="label label-default cart_num_up" style="width: 30%;border: .1em solid gainsboro;background: #FFFFFF;color: red;display:table-cell; vertical-align:middle;margin-bottom: 0.1em"><i class="icon icon-plus" style="vertical-align:middle"></i></a>-->
+                            <!--</dd>-->
+                            <dd class="cart_chage" >
+                                <a href="javascript:void(0)" onclick="goBuy(this)"
+                                   data-href="/index.php?m=home&amp;c=cart&amp;a=index&amp;id=472&amp;cid=223"
+                                   class="label label-danger car_pay" style="padding:.6em .6em .6em .6em;">立即购买</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="line30"></div>
+        <div class="footer text-center navbar-fixed-bottom">
+            <button class="btn btn-sm btn-primary" type="submit">提交去结算</button>
+        </div>
+    </form>
+</div>
+
+<script src="http://www.sxxyyx.com/Public/js/jquery.fly.min.js"></script>
+<script src="http://www.sxxyyx.com/Public/js/waypoint.js"></script>
+<script>
+    function cartCount() {
+        var cartCounts = 0;
+        $("input[type='number']").each(function () {
+            cartCounts += parseInt($(this).val());
+        });
+        $("a.car em").html(cartCounts);
+    }
+    function goBuy(obj) {
+        var href = $(obj).attr('data-href');
+        var number = $(obj).parent().parent().find("input[type='number']").val();
+        if (number < 1) {
+            layer.msg('请选择要购买的数量!');
+            return false;
+        } else {
+            location.href = href + "&number=" + $(obj).parent().parent().find("input").val();
+        }
+    }
+    var category_id = 223;
+    $(function () {
+        var slide = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: 5000,
+            direction: 'horizontal',
+            pagination: '.swiper-pagination',
+            effect: 'fade'
+        });
+
+    });
+
+
+    $('.menubar').waypoint(function (event, direction) {
+        $(this).toggleClass(' navbar-fixed-top', direction === "down");
+        event.stopPropagation();
+    });
+
+    function addCart(id, flag, that) {
+        var num = $("#num" + id).val();
+        var cartNum = parseInt($(".car em").html());
+
+        if (flag) {
+            var offset = $("i.icon-shopping-cart").offset();
+            var img = $("#thumb" + id).attr('src');
+            var flyer = $('<img class="u-flyer" src="' + img + '">');
+            flyer.fly({
+                start: {
+                    left: $("#thumb" + id).offset().left,
+                    top: $("#thumb" + id).offset().top - $(document).scrollTop()
+                },
+                end: {
+                    left: offset.left + 20,
+                    top: offset.top - $(window).scrollTop(),
+                    width: 0,
+                    height: 0
+                },
+                onEnd: function () {
+                    this.destory();
+                }
+            });
+            num++;
+            $(that).removeClass('radius').siblings().removeClass('hide');
+
+            $(".car em").html(++cartNum);
+        } else {
+            if (num > 0) {
+                num--;
+                $(".car em").html(--cartNum);
+                if (num == 0) {
+                    $(that).addClass('hide').siblings('div').addClass('hide')
+                        .siblings('.cart_num_up').addClass('radius');
+                }
+            }
+        }
+        $("#num" + id).val(num);
+    }
+    $('.goods_row').each(function (i, d) {
+        if (parseInt($(d).find('.cart_num').val()) > 0) {
+            $(d).find('.cart_num_up').removeClass('radius').siblings().removeClass('hide');
+        }
+    })
+</script>
+<script>
+
+    // 选项功能
+    var navShowIdex = 0;
+    $('body').on('click', '.select_class', function () {
+        $('.select_window').show();
+        $('.right_item_bar>div').eq($('.left_item_bar li.active').index()).show().siblings('div').hide();
+        $('html,body').addClass('ovfHiden');
+        var i = $(this).index();
+        $('.select_window .header_list_nav>div').eq(i).addClass('active').siblings('div').removeClass('active');
+        $('.select_window .item_window>div').eq(i).css('display', 'flex').siblings('div').css('display', 'none');
+        navShowIdex = i;
+    })
+    /*   $('.select_window .header_list_nav').on('click','.nav_item',function(){
+     var i=$(this).index();
+     $(this).addClass('active').siblings('div').removeClass('active');
+     $('.select_window .item_window>div').eq(i).css('display','flex').siblings('div').css('display','none');
+     navShowIdex=i;
+     })*/
+
+    $('.left_item_bar').on('click', 'li', function () {
+        $(this).addClass('active').siblings('li').removeClass('active');
+        $('.right_item_bar>div').eq($(this).index()).show().siblings('div').hide();
+    })
+
+    $('.select_window ').on('click', function (e) {
+        if ($(e.target).hasClass('select_window_modal')) {
+
+            $('.select_window').hide();
+            $('html,body').removeClass('ovfHiden');
+
+        }
+    })
+    $('.v_item_container').on('click', 'li', function () {
+        $(this).addClass('select').siblings('li').removeClass('select');
+
+//        $('.select_window .header_list_nav>div').eq(navShowIdex).children('span').html($(this).text());
+        $('#class_name').html($(this).text().trim());
+        $('.select_window').hide();
+        $('html,body').removeClass('ovfHiden');
+    })
+</script>
+</body>
+</html>
